@@ -1,0 +1,18 @@
+
+name: the-power-zd2826843
+on:
+  workflow_dispatch:
+  workflow_call:
+  repository_dispatch:
+    types: [custom_event_type]
+
+jobs:
+  build:
+    runs-on: [ 'the-power' ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 7.0
